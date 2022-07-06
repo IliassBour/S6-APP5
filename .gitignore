@@ -1,0 +1,12 @@
+
+/NodeApp/node_modules/*
+
+NodeApp/package-lock.json
+
+Particle/target/*
+Particle/.vscode/*
+Particle/src/Labo.cpp
+
+Particle/README.md
+
+Particle/project.properties

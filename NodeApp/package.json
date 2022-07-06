@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "eventsource": "^2.0.2",
+    "mqtt": "^4.3.7"
+  }
+}
