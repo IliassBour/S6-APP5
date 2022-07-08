@@ -1,0 +1,8 @@
+.beaconList {
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+  }
+
+  .beaconComponent {
+    margin: 1rem 5rem;
+  }
