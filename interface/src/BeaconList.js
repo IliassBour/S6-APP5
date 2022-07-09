@@ -4,7 +4,7 @@ import './BeaconList.css'
 function Beacon(props) {
     return (
         <div className="beaconComponent">
-            <span>{props.name}</span>
+            <span>{props.deviceUid}</span>
         </div>
     )
 }
@@ -12,7 +12,7 @@ function Beacon(props) {
 function BeaconList(props) {
     return(
         <div className="beaconList">
-            {props.beacons.map(b => <Beacon key={b.id} name={b.name}/>)}
+            {props.beacons.map(b => <Beacon key={b.id} deviceUid={b.deviceUid}/>)}
         </div>
     )
 }
