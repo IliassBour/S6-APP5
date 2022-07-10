@@ -5,29 +5,25 @@ const cors = require('cors');
 
 const fileName = "Arrive et depart pour site 1.txt";
 
-//Expose to the react server the method to get the list of deviceUid
+//Expose to the react server the method to get the list of deviceUuid
 const app = express();
 const port_api = 3006;
 app.use(cors());
 
-app.get('/deviceUid', (req, res) => {
+app.get('/deviceUuid', (req, res) => {
   var i = 1;
-  var jsonObj = {
-    beacons: {
-      1:{
-        id:"0",
-        deviceUid:"cell test"
-      }
-    }
-  };
+  var jsonObj = [];
+
   const allFileContents = fs.readFileSync(fileName, 'utf-8');
   allFileContents.split(/\r?\n/).forEach(line =>  {
-    console.log(`Line from file: ${line}`);
-    /*var deviceUid = line;
-
-    jsonObj["beacons"][i]["id"] = i;
-    jsonObj["beacons"][i]["deviceUid"] = deviceUid;
-    i++; */
+    beacon = {
+      id: i,
+      deviceUuid: line
+    };
+    jsonObj.push(beacon);
+    i++;
+    /*console.log(`Line from file: ${line}\n`);
+    console.log(beacon)*/
   });
 
   res.send(JSON.stringify(jsonObj));
