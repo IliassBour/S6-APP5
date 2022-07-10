@@ -1,5 +1,6 @@
 /Archive/node_modules/*
 /NodeApp/node_modules/*
+/Control/node_modules/*
 
 NodeApp/package-lock.json
 
@@ -14,5 +15,7 @@ interface/package-lock.json
 interface/public/robots.txt
 
 *.bak
+
+Control/package-lock.json
 
 Archive/package-lock.json
