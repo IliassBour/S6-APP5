@@ -4,7 +4,7 @@ import BeaconList from './BeaconList';
 
 function ledSwitch() {
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "http://localhost:3006/ledSwitch", false);
+  xhttp.open("GET", "http://localhost:3007/ledSwitch", false);
   xhttp.send();
 }
 

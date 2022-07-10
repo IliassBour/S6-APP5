@@ -35,4 +35,4 @@ app.get('/ledSwitch', function (req, res) {
 })
 
 console.log('Control started');
-app.listen(3006);
+app.listen(3007);
