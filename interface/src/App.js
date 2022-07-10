@@ -2,8 +2,10 @@
 import './App.css';
 import BeaconList from './BeaconList';
 
-function flashLed() {
-
+function ledSwitch() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "http://localhost:3006/ledSwitch", false);
+  xhttp.send();
 }
 
 //List de test à remplacer par la list provenant du cloud
@@ -19,7 +21,7 @@ function App() {
     <div className="App">
       <header className="App-header">
           <BeaconList beacons={beacons}></BeaconList>
-          <button className="ledButton" onClick={flashLed}>Allumer/Eteindre LED</button>
+          <button className="ledButton" onClick={ledSwitch}>Allumer/Eteindre LED</button>
       </header>
     </div>
   );

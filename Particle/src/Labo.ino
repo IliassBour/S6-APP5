@@ -14,13 +14,12 @@ int led = D7;
 int ledSwitch(String command);
 
 void onCallback(iBeaconScan& beacon, callback_type type) {
+  String event = String(beacon.getUuid()) + String((type == NEW) ? "|Entered" : "|Left");
   WITH_LOCK(Serial){
     Serial.printlnf("UUID: %s. Type: %s", beacon.getUuid(), (type == NEW) ? "Entered" : "Left");
-    String test = String(beacon.getUuid() + (type == NEW) ? "Entered" : "Left")
-    Serial.println(test);
   }
 
-  //Particle.publish("deviceUUID", beacon.getUuid());
+  //Particle.publish("deviceUUID", event);
 }
 
 void setup() {
