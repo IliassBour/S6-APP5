@@ -38,30 +38,29 @@ const clientId = `mqtt_${Math.random().toString(16).slice(3)}`
 const connectUrl = `mqtt://${host}:${port_mqtt}`
 
 //Save device uid send by the argon in a file
-function save_list() {
-  const client = mqtt.connect(connectUrl, {
-    clientId,
-    clean: true,
-    connectTimeout: 4000,
-    username: 'hivemq',
-    password: 'public',
-    reconnectPeriod: 1000
+const client = mqtt.connect(connectUrl, {
+  clientId,
+  clean: true,
+  connectTimeout: 4000,
+  username: 'hivemq',
+  password: 'public',
+  reconnectPeriod: 1000
+});
+
+const topic = 'beaconEvent';
+client.on('connect', () => {
+    console.log('Connected')
+    client.subscribe([topic], () => {
+      console.log(`Subscribe to topic '${topic}'`)
+    })
   });
 
-  const topic = 'beacon_list';
-  client.on('connect', () => {
-      console.log('Connected')
-      client.subscribe([topic], () => {
-        console.log(`Subscribe to topic '${topic}'`)
-      })
+client.on('message', (topic, payload) => {
+  fs.appendFile(fileName, payload.toString(),  function (err) {
+      if (err) throw err;
+      console.log('Saved!');
     });
+  
+    console.log('Received Message:', topic, payload.toString())
+});
 
-  client.on('message', (topic, payload) => {
-    fs.appendFile(fileName, "test - test\n",  function (err) {
-        if (err) throw err;
-        console.log('Saved!');
-      });
-    
-      console.log('Received Message:', topic, payload.toString())
-  });
-}

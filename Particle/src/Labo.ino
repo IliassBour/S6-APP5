@@ -19,7 +19,7 @@ void onCallback(iBeaconScan& beacon, callback_type type) {
     Serial.printlnf("UUID: %s. Type: %s", beacon.getUuid(), (type == NEW) ? "Entered" : "Left");
   }
 
-  //Particle.publish("deviceUUID", event);
+  Particle.publish("beaconEvent", event);
 }
 
 void setup() {
