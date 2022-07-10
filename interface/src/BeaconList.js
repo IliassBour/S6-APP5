@@ -4,9 +4,13 @@ import './BeaconList.css';
 
 
 function Beacon(props) {
+    var beaconData= props.deviceUuid.split("|");
+
     return (
         <div className="beaconComponent">
-            <span>{props.deviceUuid}</span>
+            <span className="component">Device Uuid : {beaconData[0]}</span>
+            <span className="component">Event : {beaconData[1]}</span>
+            <span className="component">Published at : {beaconData[2]}</span>
         </div>
     )
 }

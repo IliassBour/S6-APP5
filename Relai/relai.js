@@ -1,7 +1,7 @@
 const EventSource = require("eventsource");
 const mqtt = require('mqtt')
 
-const evtSource = new EventSource("https://api.particle.io/v1/events/beaconEvent?access_token=5c6c83430e75154ac343fde5a570c0ab9096856b");
+const evtSource = new EventSource("https://api.particle.io/v1/events/beaconEvent?access_token=5d1b42115b3ea1893d4e3bf85cad925ee5564a6c");
 
 const host = 'broker.hivemq.com'
 const port = '1883'

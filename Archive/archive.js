@@ -56,7 +56,10 @@ client.on('connect', () => {
   });
 
 client.on('message', (topic, payload) => {
-  fs.appendFile(fileName, payload.toString(),  function (err) {
+
+  var data = JSON.parse(payload);
+  console.log(data);
+  fs.appendFile(fileName, "\n" + data.data + "|" + data.published_at,  function (err) {
       if (err) throw err;
       console.log('Saved!');
     });
