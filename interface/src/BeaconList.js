@@ -1,7 +1,9 @@
+/*
+* Iliass Bourabaa - boui225
+* Pedro Maria Scoccimarro - scop2401
+*/
 import React, { useEffect } from "react";
 import './BeaconList.css';
-
-
 
 function Beacon(props) {
     var beaconData= props.deviceUuid.split("|");
@@ -18,11 +20,13 @@ function Beacon(props) {
 function BeaconList(props) {
     const [beacons, setBeacons] = React.useState(props.beacons);
 
+    //Méthode pour raffraichir la liste à chaque 
     useEffect(() => {
         const timer = setInterval(refreshList, 5000);
         return () => clearInterval(timer);
     }, []);
 
+    //Méthode pour GET l'api d'Archive
     function refreshList() {
         const xhttp = new XMLHttpRequest();
         xhttp.open("GET", "http://localhost:3006/deviceUuid", false);

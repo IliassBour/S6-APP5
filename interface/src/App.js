@@ -1,14 +1,18 @@
-
+/*
+* Iliass Bourabaa - boui225
+* Pedro Maria Scoccimarro - scop2401
+*/
 import './App.css';
 import BeaconList from './BeaconList';
 
+//Méthode pour GET l'api de Control
 function ledSwitch() {
   const xhttp = new XMLHttpRequest();
   xhttp.open("GET", "http://localhost:3007/ledSwitch", false);
   xhttp.send();
 }
 
-//List de test à remplacer par la list provenant du cloud
+//List de test
 const beacons = [
   {id:1 , deviceUuid:"Cell Iliass"},
   {id:2 , deviceUuid:"Cell Pedro"},
