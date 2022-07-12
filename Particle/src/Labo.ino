@@ -1,3 +1,8 @@
+/*
+* Iliass Bourabaa - boui225
+* Pedro Maria Scoccimarro - scop2401
+*/
+
 //Librairie BeaconScanner modifié pour renvoyer un iBeaconScan plutôt qu'un Beacon dans la fonction "onCallback"
 #include <BeaconScanner.h>
 

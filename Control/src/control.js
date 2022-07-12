@@ -1,3 +1,8 @@
+/*
+* Iliass Bourabaa - boui225
+* Pedro Maria Scoccimarro - scop2401
+*/
+
 //DEPENDENCIES
 const express = require('express');
 var https = require('https');
